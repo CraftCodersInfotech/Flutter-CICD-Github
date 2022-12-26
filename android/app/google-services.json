@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "730662507931",
+    "project_id": "flutter-cicd-deploy-app",
+    "storage_bucket": "flutter-cicd-deploy-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730662507931:android:a637f3391c3bb43dacbd3e",
+        "android_client_info": {
+          "package_name": "com.craftcoders.cicd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "730662507931-cbe3dei1d30q8q0jn5mlqbcegk3p9kaj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwU8a7vjYrdX3Q333Bn9BarFVD6GvjEDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "730662507931-cbe3dei1d30q8q0jn5mlqbcegk3p9kaj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
