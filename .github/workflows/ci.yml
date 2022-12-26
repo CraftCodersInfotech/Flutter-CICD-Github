@@ -7,7 +7,7 @@ on:
 jobs:
   build_apk:
     name: Upload Android Beta to Firebase App Distribution
-      runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v1
         - name: set up JDK 1.8
