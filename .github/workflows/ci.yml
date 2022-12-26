@@ -46,4 +46,4 @@ jobs:
           appId: ${{secrets.FIREBASE_ANDROID_APPID}}
           token: ${{secrets.FIREBASE_TOKEN}}
           group: testers
-          file: app-release.apk
+          file: app-release.apk 
