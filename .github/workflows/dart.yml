@@ -23,7 +23,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           name: debug-apk
-          artifacts: "build/app/outputs/apk/debug/app-debug.apk"
+          artifacts: "build/app/outputs/apk/debug/*.apk"
           token: ${{ secrets.TOKEN }}
           commit: master
           tag: v1.0.${{ github.run_number }}
@@ -47,4 +47,4 @@ jobs:
           appId: ${{secrets.FIREBASE_ANDROID_APPID}}
           token: ${{secrets.FIREBASE_TOKEN}}
           group: testers
-          file: app-debug.apk
+          file:  app-armeabi-v7a-debug.apk
