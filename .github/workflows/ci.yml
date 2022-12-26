@@ -7,7 +7,7 @@ on:
 jobs:
   build_apk:
     name: Upload Android Beta to Firebase App Distribution
-      needs: [ build_apk ]
+      needs: build_apk
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v1
@@ -26,3 +26,5 @@ jobs:
             token: ${{secrets.FIREBASE_TOKEN}}
             group: testers
             file: app-release.apk
+
+
