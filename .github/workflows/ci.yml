@@ -2,7 +2,7 @@ name: Flutter CI
 on:
   push:
     branches
-    - master
+      - master
 jobs:
   build_apk:
     name: Build Flutter (Android)
