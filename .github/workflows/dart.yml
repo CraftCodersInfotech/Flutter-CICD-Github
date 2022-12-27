@@ -33,7 +33,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: apk-release
-        path: build/app/outputs/bundle/release/app-release.apk
+        path: build/app/outputs/flutter-apk/app-release.apk
         
     - name: Firebase App Distribution
       uses: wzieba/Firebase-Distribution-Github-Action@v1.2.1
@@ -41,4 +41,4 @@ jobs:
         appId: ${{secrets.FIREBASE_APP_ID}}
         token: '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'
         groups: project-testers
-        file: build/app/outputs/bundle/release/app-release.apk
+        file: build/app/outputs/flutter-apk/app-release.apk
