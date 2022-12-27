@@ -41,4 +41,4 @@ jobs:
         appId: ${{secrets.FIREBASE_APP_ID}}
         token: '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'
         groups: project-testers
-        file: app/build/app/outputs/flutter-apk/app-release.apk
+        file: app/build/app/outputs/flutter-apk/app-x86_64-debug.apk
