@@ -1,49 +1,44 @@
-name: Flutter CI
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+name: Build & upload to Firebase App Distribution 
+
+on: [push]
+
 jobs:
-  build_apk:
-    name: Build APK
+
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-java@v1
-        with:
-          java-version: '12.x'
-      - uses: subosito/flutter-action@v1
-        with:
-          flutter-version: '3.3.7'
-      - run: flutter pub get
-      - run: flutter test
-      - run: flutter build apk --debug --split-per-abi
-      - name: Create a Release APK
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "build/app/outputs/apk/debug/*.apk"
-          token: ${{ secrets.TOKEN }}
-          commit: master
-          tag: v1.0.${{ github.run_number }}
-  beta_apk:
-    name: Upload Android Beta to Firebase App Distribution
-    needs: [build_apk]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: set up JDK 1.8
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
-      - name: Download Artifact
-        uses: actions/download-artifact@master
-        with:
-          name: release-apk
-      - name: Upload APK
-        uses: wzieba/Firebase-Distribution-Github-Action@v1.2.1
-        with:
-          appId: ${{secrets.FIREBASE_ANDROID_APPID}}
-          token: ${{secrets.FIREBASE_TOKEN}}
-          group: testers
-          file: app-release.apk
+    - uses: actions/checkout@v1
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '12.x'
+    - uses: subosito/flutter-action@v1
+      with:
+          channel: 'beta'
+   # Get flutter dependencies.
+    - run: flutter pub get
+    
+    # Check for any formatting issues in the code.
+    - run: flutter format --set-exit-if-changed .
+    
+    # Statically analyze the Dart code for any errors.
+    - run: flutter analyze .
+    
+    # Run widget tests for our flutter project.
+    - run: flutter test
+    
+    # Build apk.
+    - run: flutter build apk
+    
+    - name: Upload generated apk to the artifacts.
+      uses: actions/upload-artifact@v1
+      with:
+        name: apk-release
+        path: app/build/app/outputs/bundle/release/app-release.apk
+        
+    - name: Firebase App Distribution
+      uses: wzieba/Firebase-Distribution-Github-Action@v1.2.1
+      with:
+        appId: ${{secrets.FIREBASE_APP_ID}}
+        token: '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'
+        groups: project-testers
+        file: app/build/app/outputs/bundle/release/app-release.apk
