@@ -11,18 +11,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-        - uses: actions/checkout@v1
-        - name: set up JDK 1.8
-          uses: actions/setup-java@v1
-          with:
-            java-version: 1.8
-        - name: build release
-          run: ./gradlew assembleRelease
-        - name: upload artifact to Firebase App Distribution
-          uses: wzieba/Firebase-Distribution-Github-Action@v1
-          with:
-            appId: ${{secrets.FIREBASE_APP_ID}}
-            serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
-            groups: project-testers
-            file: app/build/outputs/apk/release/app-release-unsigned.apk
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v2
+        with:
+          distribution: "zulu"
+          java-version: "11"
+      - name: Decode google-services.json
+        env:
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: echo "$GOOGLE_SERVICES_JSON" > android/app/google-services.json
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+      - run: flutter pub get
+      - run: flutter build apk
+      - uses: actions/upload-artifact@v1
+        with:
+          name: release-apk
+          path: app/build/outputs/apk/release/app-release-unsigned.apk
+      - name: upload artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{secrets.FIREBASE_ANDROID_APPID}}
+          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+          groups: project-testers
+          file: app/build/outputs/apk/release/app-release-unsigned.apk
 
