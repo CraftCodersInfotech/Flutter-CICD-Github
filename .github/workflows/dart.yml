@@ -13,10 +13,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: build release 
-      run: ./gradlew assembleRelease
+    - name: build release
+      run: bash ./gradlew assembleDebug
     - name: upload artifact to Firebase App Distribution
-      uses: wzieba/Firebase-Distribution-Github-Action@v1
+      uses: wzieba/Firebase-Distribution-Github-Action@v1.2.2
       with:
         appId: ${{secrets.FIREBASE_APP_ID}}
         token: ${{secrets.FIREBASE_TOKEN}}
