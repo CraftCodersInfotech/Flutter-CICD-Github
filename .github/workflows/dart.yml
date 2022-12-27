@@ -27,10 +27,10 @@ jobs:
     - run: flutter test
     
     # Build apk.
-    - run: flutter build apk --debug --split-per-abi
+    - run: flutter build apk
     
     - name: Upload generated apk to the artifacts.
-      uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@v1
       with:
         name: apk-release
         path: build/app/outputs/bundle/release/app-release.apk
@@ -39,6 +39,6 @@ jobs:
       uses: wzieba/Firebase-Distribution-Github-Action@v1.2.1
       with:
         appId: ${{secrets.FIREBASE_APP_ID}}
-        token: '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'
+        token: ${{secrets.FIREBASE_TOKEN}}
         groups: project-testers
         file: build/app/outputs/bundle/release/app-release.apk
