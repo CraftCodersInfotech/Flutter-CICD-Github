@@ -26,10 +26,13 @@ jobs:
         token: ${{ secrets.TOKEN }}
         commit: master
         tag: v1.0.${{ github.run_number }}
-    - name: upload artifact to Firebase App Distribution
-      uses: wzieba/Firebase-Distribution-Github-Action@v1
-      with:
-        appId: ${{secrets.FIREBASE_APP_ID}}
-        serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
-        groups: project-testers
-        file: app/build/outputs/apk/release/app-release-unsigned.apk
+    - name: Create Firebase Service Credentials file
+      run: |
+          echo "$CREDENTIAL_FILE_CONTENT" > firebase_credentials.json.b64
+          base64 -d -i firebase_credentials.json.b64 > firebase_credentials.json
+      env:
+          FIREBASE_CREDENTIALS: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+    - name: Distribute app with 🔥 App Distribution 🚀
+      run: bundle exec fastlane distribute
+      env:
+          FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
