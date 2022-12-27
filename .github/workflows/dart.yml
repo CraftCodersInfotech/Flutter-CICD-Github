@@ -33,12 +33,12 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: apk-release
-        path: app/build/app/outputs/bundle/release/app-release.apk
+        path: build/app/outputs/bundle/release/app-release.apk
         
     - name: Firebase App Distribution
       uses: wzieba/Firebase-Distribution-Github-Action@v1.2.1
       with:
         appId: ${{secrets.FIREBASE_APP_ID}}
-        token: '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'
+        token: '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'
         groups: project-testers
-        file: app/build/app/outputs/bundle/release/app-release.apk
+        file: build/app/outputs/bundle/release/app-release.apk
