@@ -46,3 +46,4 @@ jobs:
           groups: project-testers
           file: app-release.apk
 
+
