@@ -45,5 +45,3 @@ jobs:
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: project-testers
           file: app-release.apk
-
-
