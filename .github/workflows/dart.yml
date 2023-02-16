@@ -33,7 +33,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: release-apk
-          path: build/outputs/apk/release/app-release-unsigned.apk
+          path: build/app/outputs/apk/debug/app-debug.apk
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
@@ -44,4 +44,4 @@ jobs:
           appId: ${{secrets.FIREBASE_ANDROID_APPID}}
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: project-testers
-          file: build/outputs/apk/release/app-release-unsigned.apk
+          file: build/app/outputs/apk/debug/app-debug.apk
