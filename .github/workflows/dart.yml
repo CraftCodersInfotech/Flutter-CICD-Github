@@ -29,19 +29,25 @@ jobs:
       - run: flutter test
 
       # Build apk.
-      - run: flutter build apk
+#      - run: flutter build apk
+#      - uses: actions/upload-artifact@v1
+#        with:
+#          name: build release
+#          path: build/app/outputs/flutter-apk/app-release.apk
+
+      - run: flutter build appbundle
       - uses: actions/upload-artifact@v1
         with:
           name: build release
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/bundle/release/app.aab
 #      - name: Download Artifact
 #        uses: actions/download-artifact@master
 #        with:
 #          name: build release
-      - name: upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          appId: ${{secrets.FIREBASE_ANDROID_APPID}}
-          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
-          groups: project-testers
-          file: build/app/outputs/flutter-apk/app-release.apk
+#      - name: upload artifact to Firebase App Distribution
+#        uses: wzieba/Firebase-Distribution-Github-Action@v1
+#        with:
+#          appId: ${{secrets.FIREBASE_ANDROID_APPID}}
+#          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+#          groups: project-testers
+#          file: build/app/outputs/flutter-apk/app-release.apk
