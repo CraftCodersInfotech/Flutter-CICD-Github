@@ -47,7 +47,10 @@
 #          file: app/build/outputs/apk/debug/app-debug.apk
 name: Build & upload to Firebase App Distribution
 
-on: [master]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
