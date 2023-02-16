@@ -35,11 +35,12 @@ jobs:
 #          name: build release
 #          path: build/app/outputs/flutter-apk/app-release.apk
 
-      - run: flutter build appbundle
-      - uses: actions/upload-artifact@v1
-        with:
-          name: build release
-          path: build/app/outputs/bundle/release/app.aab
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
 #      - name: Download Artifact
 #        uses: actions/download-artifact@master
 #        with:
