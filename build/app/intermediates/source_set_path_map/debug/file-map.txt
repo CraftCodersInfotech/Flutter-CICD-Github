@@ -1,0 +1,12 @@
+com.craftcoders.cicd.app-debug-0 /Users/Shared/Keval/Flutter/CICD/android/app/src/debug/res
+com.craftcoders.cicd.app-main-1 /Users/Shared/Keval/Flutter/CICD/android/app/src/main/res
+com.craftcoders.cicd.app-pngs-2 /Users/Shared/Keval/Flutter/CICD/build/app/generated/res/pngs/debug
+com.craftcoders.cicd.app-resValues-3 /Users/Shared/Keval/Flutter/CICD/build/app/generated/res/resValues/debug
+com.craftcoders.cicd.app-rs-4 /Users/Shared/Keval/Flutter/CICD/build/app/generated/res/rs/debug
+com.craftcoders.cicd.app-mergeDebugResources-5 /Users/Shared/Keval/Flutter/CICD/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.craftcoders.cicd.app-mergeDebugResources-6 /Users/Shared/Keval/Flutter/CICD/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.craftcoders.cicd.app-merged_res-7 /Users/Shared/Keval/Flutter/CICD/build/app/intermediates/merged_res/debug
+com.craftcoders.cicd.app-jetified-window-java-1.0.0-beta04-8 /Users/apple/.gradle/caches/transforms-3/006d93cd422dbc43e89591147c2de572/transformed/jetified-window-java-1.0.0-beta04/res
+com.craftcoders.cicd.app-core-1.6.0-9 /Users/apple/.gradle/caches/transforms-3/4ca28c4a71705f8a687c69dda140a277/transformed/core-1.6.0/res
+com.craftcoders.cicd.app-jetified-annotation-experimental-1.1.0-10 /Users/apple/.gradle/caches/transforms-3/8965c941cf4bee4d72541b965c7c9d39/transformed/jetified-annotation-experimental-1.1.0/res
+com.craftcoders.cicd.app-jetified-window-1.0.0-beta04-11 /Users/apple/.gradle/caches/transforms-3/dee59bb480020f42d53c2ea15e4501f7/transformed/jetified-window-1.0.0-beta04/res
