@@ -29,17 +29,15 @@ jobs:
       - run: flutter test
 
       # Build apk.
-#      - run: flutter build apk
-#      - uses: actions/upload-artifact@v1
-#        with:
-#          name: release-apk
-#          path: build/app/outputs/apk/release/app-release.apk
-#      - name: Download Artifact
-#        uses: actions/download-artifact@master
-#        with:
-#          name: release-apk
-      - name: build release
-        run: ./gradlew assembleRelease
+      - run: flutter build apk
+      - uses: actions/upload-artifact@v1
+        with:
+          name: release-apk
+          path: app/build/outputs/apk/release/app-release-unsigned.apk
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: release-apk
       - name: upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
