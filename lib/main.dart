@@ -112,12 +112,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-class AddedByMaster extends StatelessWidget {
-  const AddedByMaster({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
