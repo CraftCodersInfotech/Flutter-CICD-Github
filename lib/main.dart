@@ -122,6 +122,9 @@ class NewClassAddedBy extends StatefulWidget {
 }
 
 class _NewClassAddedByState extends State<NewClassAddedBy> {
+class AddedByMaster extends StatelessWidget {
+  const AddedByMaster({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container();
