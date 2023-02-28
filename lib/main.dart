@@ -113,16 +113,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class AddedByChild extends StatefulWidget {
-  const AddedByChild({Key? key}) : super(key: key);
+class AddedByMaster extends StatelessWidget {
+  const AddedByMaster({Key? key}) : super(key: key);
 
-  @override
-  State<AddedByChild> createState() => _AddedByChildState();
-}
-
-class _AddedByChildState extends State<AddedByChild> {
   @override
   Widget build(BuildContext context) {
     return Container();
   }
 }
+
