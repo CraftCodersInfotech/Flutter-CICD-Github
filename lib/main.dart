@@ -122,3 +122,18 @@ class AddedByMaster extends StatelessWidget {
   }
 }
 
+class MasterClass extends StatefulWidget {
+  const MasterClass({Key? key}) : super(key: key);
+
+  @override
+  State<MasterClass> createState() => _MasterClassState();
+}
+
+class _MasterClassState extends State<MasterClass> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+
