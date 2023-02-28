@@ -113,3 +113,11 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+class AddedByChild extends StatelessWidget {
+  const AddedByChild({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
