@@ -112,3 +112,18 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
+class NewClassAddedBy extends StatefulWidget {
+  const NewClassAddedBy({Key? key}) : super(key: key);
+
+  @override
+  State<NewClassAddedBy> createState() => _NewClassAddedByState();
+}
+
+class _NewClassAddedByState extends State<NewClassAddedBy> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
