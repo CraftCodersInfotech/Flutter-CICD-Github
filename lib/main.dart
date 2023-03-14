@@ -134,6 +134,7 @@ class _MasterClassState extends State<MasterClass> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.red,
+      child: const Center(),
     );
   }
 }
