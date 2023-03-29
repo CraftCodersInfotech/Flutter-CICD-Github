@@ -146,4 +146,3 @@ class AddedByChild extends StatelessWidget {
     return Container();
   }
 }
-

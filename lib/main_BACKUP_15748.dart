@@ -132,9 +132,14 @@ class MasterClass extends StatefulWidget {
 class _MasterClassState extends State<MasterClass> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Colors.red,
+      child: const Center(),
+    );
   }
 }
+<<<<<<< HEAD
+=======
 
 
 
@@ -146,4 +151,4 @@ class AddedByChild extends StatelessWidget {
     return Container();
   }
 }
-
+>>>>>>> 0a9e396 (push by child)

@@ -137,13 +137,3 @@ class _MasterClassState extends State<MasterClass> {
 }
 
 
-
-class AddedByChild extends StatelessWidget {
-  const AddedByChild({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
